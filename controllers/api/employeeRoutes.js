@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Employee, Manager } = require("../../models");
+const { Employee, Manager, Engineer, Intern } = require("../../models");
 
 // /api/employees/
 router.get("/", async (req, res) => {
@@ -25,6 +25,20 @@ router.post("/", async (req, res) => {
         officeNumber: officeNumber,
       };
       await Manager.create(newManager);
+    } else if (req.body.title === "engineer") {
+      const github = req.body.github;
+      const newEngineer = {
+        employee_id: newEmployee.id,
+        github: github,
+      };
+      await Engineer.create(newEngineer);
+    } else {
+      const school = req.body.school;
+      const newIntern = {
+        employee_id: newEmployee.id,
+        school: school,
+      };
+      await Intern.create(newIntern);
     }
 
     res.status(200).json(newEmployee);

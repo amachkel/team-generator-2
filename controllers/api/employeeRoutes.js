@@ -17,12 +17,14 @@ router.post("/", async (req, res) => {
     const newEmployee = await Employee.create({
       ...req.body,
     });
-    if (req.body.title === "manager") {
+    if (req.body.title == "manager") {
+      const officeNumber = req.body.officeNumber;
+      console.log(req.body.title);
       const newManager = {
-        employee_id: employee.id,
+        employee_id: newEmployee.id,
         officeNumber: officeNumber,
       };
-      return Manager.create(newManager);
+      await Manager.create(newManager);
     }
 
     res.status(200).json(newEmployee);
@@ -51,7 +53,6 @@ router.delete("/:id", async (req, res) => {
     const employeeData = await Employee.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 

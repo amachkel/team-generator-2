@@ -1,0 +1,22 @@
+<div class='columns is-flex is-desktop is-vcentered form-height'>
+  <form
+    class='column is-half is-offset-one-quarter box edit-post-form p-4'
+    data-id={{id}}
+  >
+    <div class='field'>
+      <input class='input' type='text' id='edit-title' value={{title}} />
+    </div>
+
+    <div class='field'>
+      <textarea class='textarea' id='edit-content'>{{content}}</textarea>
+    </div>
+    <div class='field'>
+      <p class='control'>
+        <button class='button is-primary' type='submit'>
+          Update
+        </button>
+      </p>
+    </div>
+  </form>
+</div>
+<script src='/js/edit.js'></script>

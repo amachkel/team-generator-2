@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Alex",
+    "email": "alex@hotmail.com",
+    "title": "manager"
+  },
+  {
+    "id": 2,
+    "name": "Cory",
+    "email": "cory@hotmail.com",
+    "title": "engineer"
+  },
+  {
+    "id": 3,
+    "name": "Nora",
+    "email": "nora@hotmail.com",
+    "title": "engineer"
+  },
+  {
+    "id": 4,
+    "name": "Seamus",
+    "email": "seamus@hotmail.com",
+    "title": "intern"
+  }
+]
